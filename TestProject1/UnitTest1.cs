@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MayExam2022_S00214097;
 
+
 namespace TestProject1
 {
     [TestClass]
@@ -20,4 +21,6 @@ namespace TestProject1
             Assert.AreEqual(expectedPrice, r1.Price);
         }
     }
+
+    
 }
