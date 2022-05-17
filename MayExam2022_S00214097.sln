@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "DataManagement\DataManagement.csproj", "{EC69A040-D00C-427C-9A37-B76F397ECE73}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{4052F654-4101-4FCB-805E-8D930F91DED9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\images\images\flat.png = ..\..\..\Downloads\images\images\flat.png
+		..\..\..\Downloads\images\images\house.png = ..\..\..\Downloads\images\images\house.png
+		..\..\..\Downloads\images\images\share.png = ..\..\..\Downloads\images\images\share.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

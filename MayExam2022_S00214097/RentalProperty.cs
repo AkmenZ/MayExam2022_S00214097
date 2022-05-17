@@ -24,6 +24,10 @@ namespace MayExam2022_S00214097
         {
             Price = Price + (increase / 100 * Price);
         }
+        public override string ToString()
+        {
+            return $"{Location} {Price:C}";
+        }
 
     }
 

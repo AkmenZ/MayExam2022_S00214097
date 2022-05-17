@@ -18,11 +18,44 @@ namespace MayExam2022_S00214097
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// link to git https://github.com/AkmenZ/MayExam2022_S00214097
     public partial class MainWindow : Window
     {
+        List<RentalProperty> allProperties;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            RentalPropertyData db = new RentalPropertyData();
+            var query = from rp in db.RentalProperties
+                        orderby rp.Price
+                        select rp;
+
+            allProperties = query.ToList();
+
+            lbxProperties.ItemsSource = allProperties;
+        }
+
+        private void lbxProperties_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RentalProperty selected = lbxProperties.SelectedItem as RentalProperty;
+
+            //check for null
+            if (selected != null)
+            {
+                //update display
+                tblkProperties.Text = selected.Description;
+            }
+        }
+
+        //opens second window
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            secondWindow addWindow = new secondWindow();
+            addWindow.ShowDialog();
         }
     }
 }

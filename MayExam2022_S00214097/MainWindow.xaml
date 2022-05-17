@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MayExam2022_S00214097"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <DataTemplate x:Key="listOfProperties">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Location}" Margin="5"></TextBlock>
+                <TextBlock Text="{Binding Price}" Margin="5"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Property Listing" FontSize="40" Margin="0,0,0,347" Grid.RowSpan="2"></Label>
+        <ListBox Grid.Column="0" Grid.Row="1" Margin="10,10,10,10" Name="lbxProperties" 
+                 SelectionChanged="lbxProperties_SelectionChanged" ItemTemplate="{StaticResource listOfProperties}"></ListBox>
+        <TextBlock Grid.Column="1" Grid.Row="1" Margin="10,10,10,10" Name="tblkProperties" TextWrapping="Wrap"></TextBlock>
+        <Button Grid.Column="2" Grid.Row="1" Content="Add" Height="50" Click="Button_Click"></Button>
+
     </Grid>
 </Window>
